@@ -1,1 +1,259 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "mode": "everyMinute",
+        "minute": "*/12"
+      },
+      "name": "Cron",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "id": "b9d7e7e7-e7e7-4e7e-8e7e-7e7e7e7e7e7e",
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=binancecoin",
+        "options": {
+          "headers": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        }
+      },
+      "name": "HTTP Request - BSC MCAP",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "id": "a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d",
+      "position": [450, 100]
+    },
+    {
+      "parameters": {
+        "url": "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum",
+        "options": {
+          "headers": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        }
+      },
+      "name": "HTTP Request - ETH MCAP",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "id": "f1e2d3c4-b5a6-9d8c-7b6a-5f4e3d2c1b0a",
+      "position": [450, 200]
+    },
+    {
+      "parameters": {
+        "url": "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=solana",
+        "options": {
+          "headers": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        }
+      },
+      "name": "HTTP Request - SOL MCAP",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "id": "c0d1e2f3-a4b5-6c7d-8e9f-0a1b2c3d4e5f",
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://deep-index.moralis.io/api/v2/erc20/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c/holders?chain=bsc",
+        "options": {
+          "headers": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "X-API-Key",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6IjRiOWIwNjZjLTZmNWMtNGVjYy05OTVjLWRmM2Y5NjRmZDZjMCIsIm9yZ0lkIjoiNDM1NzAiLCJ1c2VySWQiOiI0MzU3OCIsInR5cGVJZCI6ImQ5YmI1MzljLThiNGEtNDhjNi1hYTcyLWZjZjI0ZTEwZmQwMSIsInR5cGUiOiJQUk9KRUNUIiwiaWF0IjoxNzUxOTk2NzE1LCJleHAiOjQ5MDc3NTY3MTV9.TCCPcpvnLMpHyy4OBNKn8Qbx1tNwMtrbLEo_RqTvCYY"
+            }
+          ]
+        }
+      },
+      "name": "HTTP Request - BSC Holders",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "id": "h1i2j3k4-l5m6-7n8o-9p0q-1r2s3t4u5v6w",
+      "position": [450, 400]
+    },
+    {
+      "parameters": {
+        "url": "https://deep-index.moralis.io/api/v2/erc20/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2/holders?chain=eth",
+        "options": {
+          "headers": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "X-API-Key",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6IjRiOWIwNjZjLTZmNWMtNGVjYy05OTVjLWRmM2Y5NjRmZDZjMCIsIm9yZ0lkIjoiNDM1NzAiLCJ1c2VySWQiOiI0MzU3OCIsInR5cGVJZCI6ImQ5YmI1MzljLThiNGEtNDhjNi1hYTcyLWZjZjI0ZTEwZmQwMSIsInR5cGUiOiJQUk9KRUNUIiwiaWF0IjoxNzUxOTk2NzE1LCJleHAiOjQ5MDc3NTY3MTV9.TCCPcpvnLMpHyy4OBNKn8Qbx1tNwMtrbLEo_RqTvCYY"
+            }
+          ]
+        }
+      },
+      "name": "HTTP Request - ETH Holders",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "id": "x1y2z3a4-b5c6-7d8e-9f0g-1h2i3j4k5l6m",
+      "position": [450, 500]
+    },
+    {
+      "parameters": {
+        "url": "https://deep-index.moralis.io/api/v2/erc20/0x7ceb23fd6bc0add59e62ac25578270cff1b9f619/holders?chain=sol",
+        "options": {
+          "headers": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "X-API-Key",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6IjRiOWIwNjZjLTZmNWMtNGVjYy05OTVjLWRmM2Y5NjRmZDZjMCIsIm9yZ0lkIjoiNDM1NzAiLCJ1c2VySWQiOiI0MzU3OCIsInR5cGVJZCI6ImQ5YmI1MzljLThiNGEtNDhjNi1hYTcyLWZjZjI0ZTEwZmQwMSIsInR5cGUiOiJQUk9KRUNUIiwiaWF0IjoxNzUxOTk2NzE1LCJleHAiOjQ5MDc3NTY3MTV9.TCCPcpvnLMpHyy4OBNKn8Qbx1tNwMtrbLEo_RqTvCYY"
+            }
+          ]
+        }
+      },
+      "name": "HTTP Request - SOL Holders",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "id": "n1o2p3q4-r5s6-7t8u-9v0w-1x2y3z4a5b6c",
+      "position": [450, 600]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Your data filtering and formatting logic will go here\nreturn items;"
+      },
+      "name": "Function - Filter & Format",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "id": "d5e6f7a8-b9c0-1d2e-3f4a-5b6c7d8e9f0a",
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "chatId": "5282000993",
+        "text": "={{ $json.formattedTweet }}",
+        "photo": "={{ $json.imageUrl }}",
+        "type": "photo",
+        "botToken": "7896698152:AAH134J8OsRMjHo6gxcds6MTPdmlHPIwJQc"
+      },
+      "name": "Telegram - Send Alert",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "id": "e0f1a2b3-c4d5-6e7f-8a9b-0c1d2e3f4a5b",
+      "position": [850, 300]
+    }
+  ],
+  "connections": {
+    "Cron": [
+      [
+        {
+          "node": "HTTP Request - BSC MCAP",
+          "type": "main",
+          "index": 0
+        },
+        {
+          "node": "HTTP Request - ETH MCAP",
+          "type": "main",
+          "index": 0
+        },
+        {
+          "node": "HTTP Request - SOL MCAP",
+          "type": "main",
+          "index": 0
+        },
+        {
+          "node": "HTTP Request - BSC Holders",
+          "type": "main",
+          "index": 0
+        },
+        {
+          "node": "HTTP Request - ETH Holders",
+          "type": "main",
+          "index": 0
+        },
+        {
+          "node": "HTTP Request - SOL Holders",
+          "type": "main",
+          "index": 0
+        }
+      ]
+    ],
+    "HTTP Request - BSC MCAP": [
+      [
+        {
+          "node": "Function - Filter & Format",
+          "type": "main",
+          "index": 0
+        }
+      ]
+    ],
+    "HTTP Request - ETH MCAP": [
+      [
+        {
+          "node": "Function - Filter & Format",
+          "type": "main",
+          "index": 0
+        }
+      ]
+    ],
+    "HTTP Request - SOL MCAP": [
+      [
+        {
+          "node": "Function - Filter & Format",
+          "type": "main",
+          "index": 0
+        }
+      ]
+    ],
+    "HTTP Request - BSC Holders": [
+      [
+        {
+          "node": "Function - Filter & Format",
+          "type": "main",
+          "index": 0
+        }
+      ]
+    ],
+    "HTTP Request - ETH Holders": [
+      [
+        {
+          "node": "Function - Filter & Format",
+          "type": "main",
+          "index": 0
+        }
+      ]
+    ],
+    "HTTP Request - SOL Holders": [
+      [
+        {
+          "node": "Function - Filter & Format",
+          "type": "main",
+          "index": 0
+        }
+      ]
+    ],
+    "Function - Filter & Format": [
+      [
+        {
+          "node": "Telegram - Send Alert",
+          "type": "main",
+          "index": 0
+        }
+      ]
+    ]
+  }
+}
 
