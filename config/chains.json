@@ -1,1 +1,24 @@
+[
+  {
+    "name": "BSC",
+    "coin_gecko_id": "binancecoin",
+    "moralis_chain": "bsc",
+    "mcap_endpoint": "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=binancecoin",
+    "holders_endpoint": "https://deep-index.moralis.io/api/v2/erc20/{address}/holders"
+  },
+  {
+    "name": "ETH",
+    "coin_gecko_id": "ethereum",
+    "moralis_chain": "eth",
+    "mcap_endpoint": "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum",
+    "holders_endpoint": "https://deep-index.moralis.io/api/v2/erc20/{address}/holders"
+  },
+  {
+    "name": "SOL",
+    "coin_gecko_id": "solana",
+    "moralis_chain": "sol",
+    "mcap_endpoint": "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=solana",
+    "holders_endpoint": "https://deep-index.moralis.io/api/v2/erc20/{address}/holders"
+  }
+]
 
