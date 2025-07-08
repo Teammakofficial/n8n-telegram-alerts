@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: n8n
+    env: docker
+    buildCommand: npm install
+    startCommand: n8n start
+    ports:
+      - 5678
+    envVars:
+      - key: WEBHOOK_URL
+        generateValue: true
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: 'true'
+      - key: N8N_BASIC_AUTH_USER
+        sync: false
+      - key: N8N_BASIC_AUTH_PASSWORD
+        sync: false
+      - key: GENERIC_TIMEZONE
+        value: 'America/New_York'
+      - key: TZ
+        value: 'America/New_York'
+      - key: N8N_RUN_ON_STARTUP
+        value: 'true'
+      - key: N8N_RUNNERS_ENABLED
+        value: 'true'
+
+
